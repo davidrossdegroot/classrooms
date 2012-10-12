@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
+<h1>/Suggestion</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @suggestion.name %>
 </p>
 
 <p>
-  <b>Instructor:</b>
+  <b>Instructor</b><br>
   <%= @suggestion.instructor %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Description</b><br>
   <%= @suggestion.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_suggestion_path(@suggestion) %> |
-<%= link_to 'Back', suggestions_path %>
+<div class="form-actions">
+  <%= link_to 'Back', suggestions_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_suggestion_path(@suggestion), :class => 'btn' %>
+  <%= link_to 'Delete', suggestion_path(@suggestion), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

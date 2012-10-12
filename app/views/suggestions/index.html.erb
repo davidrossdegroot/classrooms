@@ -1,27 +1,26 @@
-<h1>Listing suggestions</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Instructor</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @suggestions.each do |suggestion| %>
-  <tr>
-    <td><%= suggestion.name %></td>
-    <td><%= suggestion.instructor %></td>
-    <td><%= suggestion.description %></td>
-    <td><%= link_to 'Show', suggestion %></td>
-    <td><%= link_to 'Edit', edit_suggestion_path(suggestion) %></td>
-    <td><%= link_to 'Destroy', suggestion, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Class Suggestions</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @suggestions.each do |suggestion| %>
+      <tr>
+        <td><%= suggestion.id %></td>
+        <td><%= link_to suggestion.name, suggestion_path(suggestion) %></td>
+        <td><%= suggestion.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_suggestion_path(suggestion), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', suggestion_path(suggestion), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Suggestion', new_suggestion_path %>
+<%= link_to 'New', new_suggestion_path, :class => 'btn btn-primary' %>

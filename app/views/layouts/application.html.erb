@@ -21,8 +21,13 @@
         <span class="icon-bar"></span>  
         <span class="icon-bar"></span>  
       </a> 
-      <a><img src="assets/logo_small.png" class="brand" title="Classrooms logo image"></a>
-      <a class="brand" href="#">Classrooms</a>  
+      <!--<a><img src="assets/logo_small.png" class="brand" title="Classrooms logo image"></a>-->
+      <div class="brand">
+      <%= link_to image_tag( "logo_small.png"), root_path %></div>
+      <!-- <a class="brand"><%= link_to "Classrooms", root_path %></a> -->
+      <%= link_to "Classrooms", root_path, :class => 'brand' %>
+    <!--
+      <a class="brand" href="#">Classrooms</a> -->
       <div class="nav-collapse">  
         <ul class="nav">  
           <li><%= link_to "All Scheduled Classes" %></li>  

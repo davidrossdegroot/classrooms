@@ -10,5 +10,5 @@ git commit  # Write a commit message for the file.
 
 # Push to github and heroku
 echo Pushing to heroku and github
-git push heroku master --app stark-chamber-3648
+git push heroku master
 git push origin master

@@ -1,4 +1,6 @@
 Classrooms::Application.routes.draw do
+  devise_for :users
+
   resources :suggestions
 
   get "home/index"

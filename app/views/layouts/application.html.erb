@@ -32,7 +32,6 @@
         <ul class="nav">  
           <li><%= link_to "All Scheduled Classes" %></li>  
           <li><%= link_to "Class Suggestions", suggestions_path %></li>  
-          <li><%= link_to "Contact Us" %></li>  
           <li><%= link_to "Your Classes" %></li>  
         </ul>  
       </div>  
@@ -41,7 +40,15 @@
 </div>  
 <div class="container">
     <div class="row">
-        <div class="span9"><%= yield %></div>
+         <div class="alert-success">
+            <p align="center"><%= notice %></p>
+            </div>
+            <div class="alert-error">
+            <p align="center"><%= alert %></p>
+            </div>
+        <div class="span9">
+            <%= yield %>
+        </div>
         <div class="span3">
             <h2>About Us</h2>
             <div>

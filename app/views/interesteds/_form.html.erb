@@ -1,6 +1,6 @@
 <%= form_for @interested, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
-    <legend><%= controller.action_name.capitalize %> /Interested</legend>
+    <legend><%= controller.action_name.capitalize %> How much are you willing to pay?</legend>
 
    <div class="control-group">
       <%= f.label 'How much are you willing to pay to take the class?', :class => 'control-label' %>
@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="control-group">
+   <!-- <div class="control-group">
       <%= f.label :user_id, :class => 'control-label' %>
       <div class="controls">
         <%= f.number_field :user_id, :class => 'number_field' %>
@@ -22,9 +22,10 @@
         <%= f.number_field :suggestion_id, :class => 'number_field' %>
       </div>
     </div>
+    -->
 
     <div class="form-actions">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= f.submit "I'm interested!", :class => 'btn btn-primary' %>
       <%= link_to 'Cancel', interesteds_path, :class => 'btn' %>
     </div>
   </fieldset>

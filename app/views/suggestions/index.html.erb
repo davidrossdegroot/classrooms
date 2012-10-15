@@ -2,20 +2,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <!--<th>ID</th>-->
       <th>Name</th>
-      <!-- <th>Created at</th>-->
-      <th>Actions</th>
+      <th>Description</th>
+      <th>Interested?</th>
     </tr>
   </thead>
   <tbody>
     <% @suggestions.each do |suggestion| %>
       <tr>
-        <!-- <td><%= suggestion.id %></td>-->
         <td><%= link_to suggestion.name, suggestion_path(suggestion) %></td>
-        <!--<td><%= suggestion.created_at %></td>-->
+        <td><%= suggestion.description %></td>
         <td>
-          <%= link_to 'Sign Up', edit_suggestion_path(suggestion), :class => 'btn btn-mini' %>
+          <%= link_to "I'm interested", new_interested_path, :class => 'btn btn-mini' %>
           <!--<%= link_to 'Destroy', suggestion_path(suggestion), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>-->
         </td>
       </tr>

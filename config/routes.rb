@@ -1,4 +1,6 @@
 Classrooms::Application.routes.draw do
+  resources :interesteds
+
   devise_for :users
 
   resources :suggestions

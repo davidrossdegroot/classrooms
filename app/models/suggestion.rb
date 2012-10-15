@@ -1,5 +1,6 @@
 class Suggestion < ActiveRecord::Base
-  has_many :users
+  has_many :interesteds
+  has_many :users, :through => :interesteds
   attr_accessible :suggestion_id, :name, :instructor, :description
   
   #protected

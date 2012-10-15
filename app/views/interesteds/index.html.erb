@@ -1,0 +1,26 @@
+<h1>Interesteds</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Price</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @interesteds.each do |interested| %>
+      <tr>
+        <td><%= interested.id %></td>
+        <td><%= link_to interested.price, interested_path(interested) %></td>
+        <td><%= interested.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_interested_path(interested), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', interested_path(interested), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_interested_path, :class => 'btn btn-primary' %>

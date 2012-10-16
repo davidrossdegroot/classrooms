@@ -4,6 +4,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Number currently interested</th>
       <th>Interested?</th>
     </tr>
   </thead>
@@ -12,8 +13,9 @@
       <tr>
         <td><%= link_to suggestion.name, suggestion_path(suggestion) %></td>
         <td><%= suggestion.description %></td>
+        <td><%= suggestion.interesteds.count %></td>
         <td>
-          <%= link_to "I'm interested", new_interested_path, :class => 'btn btn-mini' %>
+          <%= link_to "I'm interested", new_interested_path(:suggestion_id => suggestion.id), :method => :get, :class => 'btn btn-mini' %>
           <!--<%= link_to 'Destroy', suggestion_path(suggestion), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>-->
         </td>
       </tr>

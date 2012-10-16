@@ -25,6 +25,7 @@ class InterestedsController < ApplicationController
   # GET /interesteds/new.json
   def new
     @interested = Interested.new
+    @interested.suggestion_id = params[:suggestion_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,13 @@ class InterestedsController < ApplicationController
   # POST /interesteds.json
   def create
     @interested = Interested.new(params[:interested])
+    @interested.user_id = current_user.id
+    #@interested.suggestion_id = (params[:suggestion_id])
+
+    #@interested.suggestion_id = (params[:suggestion_id])
+    #@interested.suggestion_id = params => [:suggestion_id]
+    #@interested.suggestion_id => :params[:suggestion_id]
+    #@interested.suggestion_id =
 
     respond_to do |format|
       if @interested.save

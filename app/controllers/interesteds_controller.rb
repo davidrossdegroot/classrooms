@@ -43,12 +43,6 @@ class InterestedsController < ApplicationController
   def create
     @interested = Interested.new(params[:interested])
     @interested.user_id = current_user.id
-    #@interested.suggestion_id = (params[:suggestion_id])
-
-    #@interested.suggestion_id = (params[:suggestion_id])
-    #@interested.suggestion_id = params => [:suggestion_id]
-    #@interested.suggestion_id => :params[:suggestion_id]
-    #@interested.suggestion_id =
 
     respond_to do |format|
       if @interested.save

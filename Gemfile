@@ -7,7 +7,6 @@ gem 'rails', '3.2.2'
 
 gem 'pg'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -15,6 +14,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails'
   gem 'devise'
+  #gem 'psych'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
@@ -23,6 +23,13 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+#group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem 'rspec-expectations'
+#end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
